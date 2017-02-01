@@ -100,6 +100,8 @@ select b.country,
        from 
  
         (
+
+
        select date,
                fullVisitorId,
                (visitId) as visitid,
