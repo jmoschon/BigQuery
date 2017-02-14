@@ -8,7 +8,7 @@ Count(DISTINCT B.session_id) as NumRestLoaded,
 Count(DISTINCT C.session_id) as NumBought
 
 FROM 
-/**CR2**/
+--CR2
 (
 Select
     CONCAT(fullVisitorId, STRING(visitId)) as session_id,
@@ -19,7 +19,7 @@ where hits.eventInfo.eventAction = 'shop_list.loaded'
 group by 1,2 ) A 
 
 left join
-/**CR3**/
+--CR3
 (
 Select
     CONCAT(fullVisitorId, STRING(visitId)) as session_id,
@@ -31,7 +31,7 @@ group by 1
 on A.session_id = B.session_id
 
 left join
-/**CR4**/
+--CR4
 (
 Select
     CONCAT(fullVisitorId, STRING(visitId)) as session_id,
