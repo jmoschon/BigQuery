@@ -31,5 +31,5 @@ GROUP BY 1,2,3,4,5
 GROUP BY 1,2,3,4,5,6,7,8,9,10
 ORDER BY 11 desc
 
-
+--where regexp_match(full_funnel,'1$') and (  not  regexp_match (full_funnel, '1111$'))
 -- 000001 only transaction
