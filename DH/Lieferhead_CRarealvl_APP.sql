@@ -22,8 +22,8 @@ join
 (
 select  
 visitid,
-/*IF(sum(if(REGEXP_MATCH(hits.page.pagePath, '/../../food-delivery'), 1,0))>0,1,0) as home, */
-//IF(sum(if(hits.eventInfo.eventAction = 'address.submitted', 1,0))>0,1,0) as address_submitted,
+--IF(sum(if(REGEXP_MATCH(hits.page.pagePath, '/../../food-delivery'), 1,0))>0,1,0) as home,
+--IF(sum(if(hits.eventInfo.eventAction = 'address.submitted', 1,0))>0,1,0) as address_submitted,
 IF(sum(if(hits.eventInfo.eventAction = 'shop_list.loaded', 1,0))>0,1,0) as listing,
 IF(sum(if(hits.eventInfo.eventAction = 'shop_details.loaded', 1,0))>0,1,0) as shop_details,
 IF(sum(if(hits.eventInfo.eventAction = 'add_cart.clicked', 1,0))>0,1,0) as add_cart,
