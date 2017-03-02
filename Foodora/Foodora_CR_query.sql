@@ -27,7 +27,7 @@ FROM (
                 visitor_type,
                 device,
                 operatingsystem,
-                operatingsystem,
+                --operatingsystem,
                 medium,
                 campaign,
                 source,
