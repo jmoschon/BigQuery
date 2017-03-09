@@ -18,7 +18,7 @@ select  date(a.date) as ga_date,
              when dayofweek(CAST(a.date AS TIMESTAMP))=6 then '6.Friday'
              when dayofweek(CAST(a.date AS TIMESTAMP))=7 then '7.Saturday' else 'none'
         END as ga_day,
-        countries.country as country,
+            countries.country as country,
         iso.common_name as common_name,
         a.device.deviceCategory as platform,
         a.platform_agg as platform_agg,
