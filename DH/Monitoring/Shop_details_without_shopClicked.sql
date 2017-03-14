@@ -43,7 +43,8 @@ from
     		MIN(IF(p_e_info == "shop.clicked",hits.hitNumber,NULL)) OVER (PARTITION BY Platform, fullvisitorId, visitID) AS first_shopClicked_hit,
 --    		MIN(IF(p_e_info == "checkout.loaded",hits.time,NULL)) OVER (PARTITION BY Platform, fullvisitorId, visitID) AS first_checkout_time,
             MIN(IF(p_e_info == "shop.clicked",hits.time,NULL)) OVER (PARTITION BY Platform, fullvisitorId, visitID) AS first_shopClicked_time
-		FROM TABLE_DATE_RANGE([blh---lieferheld:38642300.ga_sessions_], TIMESTAMP(DATE_ADD(TIMESTAMP(CURRENT_DATE()),-2,"DAY")), TIMESTAMP(DATE_ADD(TIMESTAMP(CURRENT_DATE()),-2,"DAY")))
+		FROM TABLE_DATE_RANGE([bpi---pizzade:107156186.ga_sessions_], TIMESTAMP (DATE_ADD(TIMESTAMP(CURRENT_DATE()),-10,"DAY")), TIMESTAMP(DATE_ADD(TIMESTAMP(CURRENT_DATE()),-1,"DAY")))
+--		FROM TABLE_DATE_RANGE([blh---lieferheld:38642300.ga_sessions_], TIMESTAMP(DATE_ADD(TIMESTAMP(CURRENT_DATE()),-2,"DAY")), TIMESTAMP(DATE_ADD(TIMESTAMP(CURRENT_DATE()),-2,"DAY")))
 		WHERE
 			(hits.eventInfo.eventAction = 'shop_list.loaded' OR
 			hits.eventInfo.eventAction = 'shop_details.loaded' OR
